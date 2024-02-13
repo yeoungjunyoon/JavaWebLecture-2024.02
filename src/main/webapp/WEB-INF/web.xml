@@ -19,4 +19,44 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>LifeCycle</display-name>
+    <servlet-name>LifeCycle</servlet-name>
+    <servlet-class>ch05.LifeCycle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeCycle</servlet-name>
+    <url-pattern>/LifeCycle</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex02_LifeCycle</display-name>
+    <servlet-name>Ex02_LifeCycle</servlet-name>
+    <servlet-class>ch05.Ex02_LifeCycle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex02_LifeCycle</servlet-name>
+    <url-pattern>/Ex02_LifeCycle</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex01_RequesMethod</display-name>
+    <servlet-name>Ex01_RequesMethod</servlet-name>
+    <servlet-class>ch06.basic.Ex01_RequesMethod</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex01_RequesMethod</servlet-name>
+    <url-pattern>/Ex01_RequesMethod</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex02_Parameter</display-name>
+    <servlet-name>Ex02_Parameter</servlet-name>
+    <servlet-class>ch06.basic.Ex02_Parameter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex02_Parameter</servlet-name>
+    <url-pattern>/Ex02_Parameter</url-pattern>
+  </servlet-mapping>
 </web-app>
