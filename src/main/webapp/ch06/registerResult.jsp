@@ -9,7 +9,7 @@
 		td	{ padding: 3px; }
 	</style>
 </head>
-<body style="margin: 50px;">
+<body style="margin: 30px;">
 	<h1>회원 가입 결과</h1>
 	<hr>
 	<table border="1">
