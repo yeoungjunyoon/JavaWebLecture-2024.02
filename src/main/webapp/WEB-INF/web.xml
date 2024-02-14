@@ -59,4 +59,14 @@
     <servlet-name>Ex02_Parameter</servlet-name>
     <url-pattern>/Ex02_Parameter</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Calculator</display-name>
+    <servlet-name>Calculator</servlet-name>
+    <servlet-class>ch06.basic.Calculator</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Calculator</servlet-name>
+    <url-pattern>/Calculator</url-pattern>
+  </servlet-mapping>
 </web-app>
