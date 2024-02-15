@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
+<web-app xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
   <servlet>
     <description></description>
     <display-name>Ex01_FirstServlet</display-name>
@@ -21,16 +21,6 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>LifeCycle</display-name>
-    <servlet-name>LifeCycle</servlet-name>
-    <servlet-class>ch05.LifeCycle</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>LifeCycle</servlet-name>
-    <url-pattern>/LifeCycle</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>Ex02_LifeCycle</display-name>
     <servlet-name>Ex02_LifeCycle</servlet-name>
     <servlet-class>ch05.Ex02_LifeCycle</servlet-class>
@@ -41,19 +31,19 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Ex01_RequesMethod</display-name>
-    <servlet-name>Ex01_RequesMethod</servlet-name>
-    <servlet-class>ch06.basic.Ex01_RequesMethod</servlet-class>
+    <display-name>Ex01_RequestMethod</display-name>
+    <servlet-name>Ex01_RequestMethod</servlet-name>
+    <servlet-class>ch06_basic.Ex01_RequestMethod</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Ex01_RequesMethod</servlet-name>
-    <url-pattern>/Ex01_RequesMethod</url-pattern>
+    <servlet-name>Ex01_RequestMethod</servlet-name>
+    <url-pattern>/Ex01_RequestMethod</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>Ex02_Parameter</display-name>
     <servlet-name>Ex02_Parameter</servlet-name>
-    <servlet-class>ch06.basic.Ex02_Parameter</servlet-class>
+    <servlet-class>ch06_basic.Ex02_Parameter</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Ex02_Parameter</servlet-name>
@@ -61,19 +51,19 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Calculator</display-name>
-    <servlet-name>Calculator</servlet-name>
-    <servlet-class>ch06.basic.Calculator</servlet-class>
+    <display-name>Ex03_Calculator</display-name>
+    <servlet-name>Ex03_Calculator</servlet-name>
+    <servlet-class>ch06_basic.Ex03_Calculator</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Calculator</servlet-name>
-    <url-pattern>/Calculator</url-pattern>
+    <servlet-name>Ex03_Calculator</servlet-name>
+    <url-pattern>/Ex03_Calculator</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>Ex04_RegisterMember</display-name>
     <servlet-name>Ex04_RegisterMember</servlet-name>
-    <servlet-class>ch06.basic.Ex04_RegisterMember</servlet-class>
+    <servlet-class>ch06_basic.Ex04_RegisterMember</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Ex04_RegisterMember</servlet-name>
@@ -81,12 +71,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Ex99_login</display-name>
-    <servlet-name>Ex99_login</servlet-name>
-    <servlet-class>ch06.basic.Ex99_login</servlet-class>
+    <display-name>CityController</display-name>
+    <servlet-name>CityController</servlet-name>
+    <servlet-class>ch07_dao.CityController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Ex99_login</servlet-name>
-    <url-pattern>/Ex99_login</url-pattern>
+    <servlet-name>CityController</servlet-name>
+    <url-pattern>/CityController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex05_Login</display-name>
+    <servlet-name>Ex05_Login</servlet-name>
+    <servlet-class>ch06_basic.Ex05_Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex05_Login</servlet-name>
+    <url-pattern>/Ex05_Login</url-pattern>
   </servlet-mapping>
 </web-app>
