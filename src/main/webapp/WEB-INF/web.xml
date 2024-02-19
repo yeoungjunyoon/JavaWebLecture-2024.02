@@ -163,7 +163,7 @@
     <description></description>
     <display-name>Ex01_SetSession</display-name>
     <servlet-name>Ex01_SetSession</servlet-name>
-    <servlet-class>ch09_cooki_SetSession.Ex01_SetSession</servlet-class>
+    <servlet-class>ch09_cookie_session.Ex01_SetSession</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Ex01_SetSession</servlet-name>
@@ -173,7 +173,7 @@
     <description></description>
     <display-name>Ex02_GetSession</display-name>
     <servlet-name>Ex02_GetSession</servlet-name>
-    <servlet-class>ch09_cooki_SetSession.Ex02_GetSession</servlet-class>
+    <servlet-class>ch09_cookie_session.Ex02_GetSession</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Ex02_GetSession</servlet-name>
@@ -181,22 +181,32 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Ex03_SetCooki</display-name>
-    <servlet-name>Ex03_SetCooki</servlet-name>
-    <servlet-class>ch09_cooki_session.Ex03_SetCooki</servlet-class>
+    <display-name>Ex03_SetCookie</display-name>
+    <servlet-name>Ex03_SetCookie</servlet-name>
+    <servlet-class>ch09_cookie_session.Ex03_SetCookie</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Ex03_SetCooki</servlet-name>
-    <url-pattern>/Ex03_SetCooki</url-pattern>
+    <servlet-name>Ex03_SetCookie</servlet-name>
+    <url-pattern>/Ex03_SetCookie</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>Ex04_GetCookie</display-name>
     <servlet-name>Ex04_GetCookie</servlet-name>
-    <servlet-class>ch09_cooki_session.Ex04_GetCookie</servlet-class>
+    <servlet-class>ch09_cookie_session.Ex04_GetCookie</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Ex04_GetCookie</servlet-name>
     <url-pattern>/Ex04_GetCookie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserController</display-name>
+    <servlet-name>UserController</servlet-name>
+    <servlet-class>ch09_cookie_session.user.UserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserController</servlet-name>
+    <url-pattern>/UserController</url-pattern>
   </servlet-mapping>
 </web-app>
