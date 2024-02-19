@@ -1,4 +1,4 @@
-package ch09_cooki_session;
+package ch09_cookie_session;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -23,6 +23,7 @@ public class Ex03_SetCooki extends HttpServlet {
 		Cookie c1 = new Cookie("cookie-name", "cookie-value");
 		c1.setMaxAge(24 * 60 * 60); 		// 유효기간: 24 * 60 * 60 초 --> 1일
 		response.addCookie(c1);
+		
 		
 		String KMsg = URLEncoder.encode("한글 데이터", "utf-8");
 		Cookie c2 = new Cookie("hangul-name", KMsg);

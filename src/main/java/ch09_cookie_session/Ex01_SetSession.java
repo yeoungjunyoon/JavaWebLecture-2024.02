@@ -1,4 +1,4 @@
-package ch09_cooki_session;
+package ch09_cookie_session;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

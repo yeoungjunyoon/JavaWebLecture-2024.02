@@ -189,4 +189,14 @@
     <servlet-name>Ex03_SetCooki</servlet-name>
     <url-pattern>/Ex03_SetCooki</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex04_GetCookie</display-name>
+    <servlet-name>Ex04_GetCookie</servlet-name>
+    <servlet-class>ch09_cooki_session.Ex04_GetCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex04_GetCookie</servlet-name>
+    <url-pattern>/Ex04_GetCookie</url-pattern>
+  </servlet-mapping>
 </web-app>
