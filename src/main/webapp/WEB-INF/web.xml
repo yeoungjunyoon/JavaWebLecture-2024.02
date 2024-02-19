@@ -141,12 +141,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>KcityControll</display-name>
-    <servlet-name>KcityControll</servlet-name>
-    <servlet-class>ch07_dao.Kcity.KcityControll</servlet-class>
+    <display-name>KcityController</display-name>
+    <servlet-name>KcityController</servlet-name>
+    <servlet-class>ch07_dao.kcity.KcityController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>KcityControll</servlet-name>
-    <url-pattern>/KcityControll</url-pattern>
+    <servlet-name>KcityController</servlet-name>
+    <url-pattern>/KcityController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>KpopController</display-name>
+    <servlet-name>KpopController</servlet-name>
+    <servlet-class>ch07_dao.kpop.KpopController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KpopController</servlet-name>
+    <url-pattern>/KpopController</url-pattern>
   </servlet-mapping>
 </web-app>

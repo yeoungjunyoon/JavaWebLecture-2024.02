@@ -1,30 +1,30 @@
-package ch07_dao.Kcity;
+package ch07_dao.kcity;
 
 public class City {
 	private int id;
 	private String name;
-	private String countrycode;
+	private String countryCode;
 	private String district;
 	private int population;
-
+	
 	public City() { }
-	public City(String name, String countrycode, String district, int population) {
+	public City(String name, String countryCode, String district, int population) {
 		this.name = name;
-		this.countrycode = countrycode;
+		this.countryCode = countryCode;
 		this.district = district;
 		this.population = population;
 	}
-	public City(int id, String name, String countrycode, String district, int population) {
+	public City(int id, String name, String countryCode, String district, int population) {
 		this.id = id;
 		this.name = name;
-		this.countrycode = countrycode;
+		this.countryCode = countryCode;
 		this.district = district;
 		this.population = population;
 	}
 	
 	@Override
 	public String toString() {
-		return "City [id=" + id + ", name=" + name + ", countrycode=" + countrycode + ", district=" + district
+		return "City [id=" + id + ", name=" + name + ", countryCode=" + countryCode + ", district=" + district
 				+ ", population=" + population + "]";
 	}
 	
@@ -40,11 +40,11 @@ public class City {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getCountrycode() {
-		return countrycode;
+	public String getCountryCode() {
+		return countryCode;
 	}
-	public void setCountrycode(String countrycode) {
-		this.countrycode = countrycode;
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
 	}
 	public String getDistrict() {
 		return district;
