@@ -44,10 +44,10 @@
 				</c:if>
 				<!-- 본인 또는 관리자만 삭제 가능 -->
 				<c:if test="${(user.uid eq sessUid) or (sessUid eq 'admin')}">
-					<a href="/jw/ch09/user/delete?uid=${user.uid}">삭제</a>
+					<a class="ms-2" href="javascript:deleteFunc(${user.uid}')">삭제</a>
 				</c:if>
 				<c:if test="${(user.uid ne sessUid) and (sessUid ne 'admin')}">
-					<a href="#" disabled>삭제</a>
+					<a href="ms-2 disabled-link">삭제</a>
 				</c:if>
 			</td>
 		</tr>
