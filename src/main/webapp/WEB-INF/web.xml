@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
   <servlet>
     <description></description>
     <display-name>Ex01_FirstServlet</display-name>
@@ -227,5 +227,55 @@
   <servlet-mapping>
     <servlet-name>FilterTest</servlet-name>
     <url-pattern>/FilterTest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex02_builtinobject</display-name>
+    <servlet-name>Ex02_builtinobject</servlet-name>
+    <servlet-class>ch14_el_jstl.Ex02_builtinobject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex02_builtinobject</servlet-name>
+    <url-pattern>/Ex02_builtinobject</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex03_collections</display-name>
+    <servlet-name>Ex03_collections</servlet-name>
+    <servlet-class>ch14_el_jstl.Ex03_collections</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex03_collections</servlet-name>
+    <url-pattern>/Ex03_collections</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex04_Pojo</display-name>
+    <servlet-name>Ex04_Pojo</servlet-name>
+    <servlet-class>ch14_el_jstl.Ex04_Pojo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex04_Pojo</servlet-name>
+    <url-pattern>/Ex04_Pojo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex11_Core</display-name>
+    <servlet-name>Ex11_Core</servlet-name>
+    <servlet-class>ch14_el_jstl.Ex11_Core</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex11_Core</servlet-name>
+    <url-pattern>/Ex11_Core</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex11_core</display-name>
+    <servlet-name>Ex11_core</servlet-name>
+    <servlet-class>ch14_el_jstl.Ex11_core</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex11_core</servlet-name>
+    <url-pattern>/Ex11_core</url-pattern>
   </servlet-mapping>
 </web-app>
