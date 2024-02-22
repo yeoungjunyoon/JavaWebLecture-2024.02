@@ -33,7 +33,7 @@
 					<div class="col-10">
 						<table class="table">
 							<tr><th>아이디</th><th>이름</th><th>이메일</th><th>등록일</th><th>액션</th></tr>
-							<c:forEach var="user" items="${list}">
+							<c:forEach var="user" items="${userList}">
 							<tr>
 								<td>${user.uid}</td>
 								<td>${user.uname}</td>
@@ -58,6 +58,14 @@
 							</tr>
 							</c:forEach>
 						</table>
+						<%-- pagination --%>
+<ul class="pagination">
+  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
 					</div>
 					<div class="col-1"></div>
 				</div>
