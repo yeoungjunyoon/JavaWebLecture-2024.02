@@ -23,5 +23,7 @@ public interface BoardService {
 	void increaseViewCount(int bid);
 	
 	void increaseReplyCount(int bid);
+
+	Board getBoard(String string, Board board);
 	
 }

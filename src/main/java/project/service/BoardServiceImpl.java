@@ -18,8 +18,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public Board getBoard(int bid) {
-		// TODO Auto-generated method stub
-		return null;
+		return bDao.getBoard(bid);
 	}
 
 	@Override
@@ -29,8 +28,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void insertBoard(Board board) {
-		// TODO Auto-generated method stub
-		
+		bDao.insertBoard(board);
 	}
 
 	@Override
@@ -47,14 +45,18 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void increaseViewCount(int bid) {
-		// TODO Auto-generated method stub
-		
+		bDao.increaseCount("view", bid);
 	}
 
 	@Override
 	public void increaseReplyCount(int bid) {
+		bDao.increaseCount("reply", bid);
+	}
+
+	@Override
+	public Board getBoard(String string, Board board) {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 }
