@@ -12,6 +12,7 @@ import project.service.BoardService;
 import project.service.BoardServiceImpl;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet({"/bbs/board/list", "/bbs/board/insert", "/bbs/board/update", 
@@ -33,10 +34,19 @@ public class BoardController extends HttpServlet {
 			String field = request.getParameter("f");
 			String query = request.getParameter("q");
 			int page = (page_ == null || page_.equals("")) ? 1 : Integer.parseInt(page_);
+			session.setAttribute("currentBoardPage", page);
 			field = (field == null || field.equals("")) ? "title" : field;
 			query = (query == null || query.equals("")) ? "" : query;
 			List<Board> boardList = bSvc.getBoardList(page, field, query);
 			request.setAttribute("boardList", boardList);
+			
+			// for pagination
+			int totalItems = bSvc.getBoardCount();
+			int totalPages = (int) Math.ceil(totalItems * 1.0 / bSvc.COUNT_PER_PAGE);
+			List<String> pageList = new ArrayList<String>();
+			for (int i = 1; i <= totalPages; i++)
+				pageList.add(String.valueOf(i));
+			request.setAttribute("pageList", pageList);
 			
 			rd = request.getRequestDispatcher("/WEB-INF/view/board/list.jsp");
 			rd.forward(request, response);

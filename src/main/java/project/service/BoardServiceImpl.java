@@ -24,8 +24,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public int getBoardCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return bDao.getBoardCount();
 	}
 
 	@Override
