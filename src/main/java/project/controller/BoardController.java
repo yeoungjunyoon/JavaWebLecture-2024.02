@@ -13,6 +13,7 @@ import project.service.BoardService;
 import project.service.BoardServiceImpl;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,8 @@ public class BoardController extends HttpServlet {
 		String title = "", content = "", sessUid = "", field = "", query = "", page_ = "";
 		Board board = null;
 		int bid = 0, page = 0;
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		
 		switch(action) {
 		case "list":			// /jw/bbs/board/list?p=1&f=title&q=검색
@@ -47,7 +50,7 @@ public class BoardController extends HttpServlet {
 			request.setAttribute("boardList", boardList);
 			
 			// for pagination
-			int totalItems = bSvc.getBoardCount();
+			int totalItems = bSvc.getBoardCount(field, query);
 			int totalPages = (int) Math.ceil(totalItems * 1.0 / bSvc.COUNT_PER_PAGE);
 			List<String> pageList = new ArrayList<String>();
 			for (int i = 1; i <= totalPages; i++)
@@ -77,7 +80,7 @@ public class BoardController extends HttpServlet {
 			break;
 		
 		case "detail":
-			bid = Integer.parseInt(request.getParameter("bid")); 
+			bid = Integer.parseInt(request.getParameter("bid"));
 			bSvc.increaseViewCount(bid);
 			
 			board = bSvc.getBoard(bid);
@@ -96,6 +99,7 @@ public class BoardController extends HttpServlet {
 			page = (Integer) session.getAttribute("currentBoardPage");
 			field = (String) session.getAttribute("field");
 			query = (String) session.getAttribute("query");
+			query = URLEncoder.encode(query, "utf-8");
 			response.sendRedirect("/jw/bbs/board/list?p=" + page + "&f=" + field + "&q=" + query);
 			break;
 		}

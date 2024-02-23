@@ -12,7 +12,7 @@ public interface BoardService {
 	
 	Board getBoard(int bid);
 	
-	int getBoardCount();
+	int getBoardCount(String field, String query);
 	
 	void insertBoard(Board board);
 	
@@ -24,6 +24,4 @@ public interface BoardService {
 	
 	void increaseReplyCount(int bid);
 
-	Board getBoard(String string, Board board);
-	
 }
