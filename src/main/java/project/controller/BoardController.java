@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import jakarta.websocket.SendResult;
 import project.entity.Board;
 import project.entity.Reply;
 import project.service.BoardService;
@@ -17,7 +16,6 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @WebServlet({"/bbs/board/list", "/bbs/board/insert", "/bbs/board/update", 
 			 "/bbs/board/delete", "/bbs/board/detail"})
@@ -31,9 +29,10 @@ public class BoardController extends HttpServlet {
 		String method = request.getMethod();
 		HttpSession session = request.getSession();
 		RequestDispatcher rd = null;
-		String title = "", content = "", sessUid = "", field = "", query = "", page_ = "";
+		String title = "", content = "", field = "", query = "", page_ = "", uid = "";
 		Board board = null;
 		int bid = 0, page = 0;
+		String sessUid = (String) session.getAttribute("sessUid");
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
 		
@@ -64,7 +63,6 @@ public class BoardController extends HttpServlet {
 			break;
 			
 		case "insert":
-			sessUid = (String) session.getAttribute("sessUid");
 			if (sessUid == null || sessUid.equals("")) {
 				response.sendRedirect("/jw/bbs/user/login");
 				break;
@@ -83,7 +81,9 @@ public class BoardController extends HttpServlet {
 		
 		case "detail":
 			bid = Integer.parseInt(request.getParameter("bid"));
-			bSvc.increaseViewCount(bid);
+			uid = request.getParameter("uid");
+			if (!uid.equals(sessUid))
+				bSvc.increaseViewCount(bid);
 			
 			board = bSvc.getBoard(bid);
 			request.setAttribute("board", board);
@@ -112,14 +112,15 @@ public class BoardController extends HttpServlet {
 				request.setAttribute("board", board);
 				rd = request.getRequestDispatcher("/WEB-INF/view/board/update.jsp");
 				rd.forward(request, response);
-			}else {
+			} else {
 				bid = Integer.parseInt(request.getParameter("bid"));
+				uid = request.getParameter("uid");
 				title = request.getParameter("title");
 				content = request.getParameter("content");
 				board = new Board(bid, title, content);
 				
 				bSvc.updateBoard(board);
-				response.sendRedirect("/jw/bbs/board/detail?bid=" + bid);
+				response.sendRedirect("/jw/bbs/board/detail?bid=" + bid + "&uid=" + uid);
 			}
 			break;
 		}
