@@ -39,8 +39,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void deleteBoard(int bid) {
-		// TODO Auto-generated method stub
-		
+		bDao.deleteBoard(bid);
 	}
 
 	@Override
