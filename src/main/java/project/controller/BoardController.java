@@ -77,7 +77,7 @@ public class BoardController extends HttpServlet {
 			break;
 		
 		case "detail":
-			bid = Integer.parseInt(request.getParameter("bid"));
+			bid = Integer.parseInt(request.getParameter("bid")); 
 			bSvc.increaseViewCount(bid);
 			
 			board = bSvc.getBoard(bid);

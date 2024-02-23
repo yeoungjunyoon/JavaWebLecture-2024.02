@@ -122,7 +122,7 @@ public class BoardDao {
 		Connection conn = getConnection();
 		String sql = "UPDATE board SET " + field + "Count=" + field + "Count+1 WHERE bid=?";
 		try {
-			PreparedStatement pstmt = conn.prepareStatement(sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql); 
 			pstmt.setInt(1, bid);
 			
 			pstmt.executeUpdate();

@@ -12,7 +12,7 @@ public class BoardServiceImpl implements BoardService {
 	public List<Board> getBoardList(int page, String field, String query) {
 		int offset = (page - 1) * COUNT_PER_PAGE;
 		query = "%" + query + "%";
-		List<Board> list = bDao.getBoardList(field, query, COUNT_PER_PAGE, offset);
+		List<Board> list = bDao.getBoardList(field, query, COUNT_PER_PAGE, offset); 
 		return list;
 	}
 
