@@ -9,7 +9,6 @@
 	<%@ include file="../common/_head.jspf" %>
 	<style>
 		td, th { text-align: center; }
-		.disabled-link { pointer-events: none; }
 	</style>
 	<script>
 		function deleteFunc(bid) {
@@ -63,6 +62,27 @@
 	
 	<%@ include file="../common/_bottom.jspf" %>
 
-
+	<div class="modal" id="deleteModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">게시글 삭제</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+			
+				<!-- Modal body -->
+				<div class="modal-body">
+					<strong>정말로 삭제하시겠습니까?</strong>
+					<div class="text-center mt-5">
+						<form action="/jw/bbs/board/delete" method="post">
+							<input type="hidden" id="deleteBid" name="bid">
+							<button class="btn btn-danger" type="submit">삭제</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
 </body>
 </html>

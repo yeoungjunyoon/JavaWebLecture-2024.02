@@ -209,6 +209,15 @@
     <servlet-name>UserController</servlet-name>
     <url-pattern>/UserController</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>EncodingFilter</display-name>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>ch10_filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/EncodingFilter</url-pattern>
+  </filter-mapping>
   <servlet>
     <description></description>
     <display-name>FilterTest</display-name>
@@ -221,23 +230,23 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Ex02_builtinobject</display-name>
-    <servlet-name>Ex02_builtinobject</servlet-name>
-    <servlet-class>ch14_el_jstl.Ex02_builtinobject</servlet-class>
+    <display-name>Ex02_BuiltinObject</display-name>
+    <servlet-name>Ex02_BuiltinObject</servlet-name>
+    <servlet-class>ch14_el_jstl.Ex02_BuiltinObject</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Ex02_builtinobject</servlet-name>
-    <url-pattern>/Ex02_builtinobject</url-pattern>
+    <servlet-name>Ex02_BuiltinObject</servlet-name>
+    <url-pattern>/Ex02_BuiltinObject</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Ex03_collections</display-name>
-    <servlet-name>Ex03_collections</servlet-name>
-    <servlet-class>ch14_el_jstl.Ex03_collections</servlet-class>
+    <display-name>Ex03_Collections</display-name>
+    <servlet-name>Ex03_Collections</servlet-name>
+    <servlet-class>ch14_el_jstl.Ex03_Collections</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Ex03_collections</servlet-name>
-    <url-pattern>/Ex03_collections</url-pattern>
+    <servlet-name>Ex03_Collections</servlet-name>
+    <url-pattern>/Ex03_Collections</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -261,16 +270,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Ex11_core</display-name>
-    <servlet-name>Ex11_core</servlet-name>
-    <servlet-class>ch14_el_jstl.Ex11_core</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Ex11_core</servlet-name>
-    <url-pattern>/Ex11_core</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>BoardController</display-name>
     <servlet-name>BoardController</servlet-name>
     <servlet-class>project.controller.BoardController</servlet-class>
@@ -279,4 +278,4 @@
     <servlet-name>BoardController</servlet-name>
     <url-pattern>/BoardController</url-pattern>
   </servlet-mapping>
-</web-app> 
+</web-app>

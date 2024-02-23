@@ -100,7 +100,18 @@ public class BoardDao {
 	
 	public void updateBoard(Board board) {
 		Connection conn = getConnection();
-		
+		String sql = "update board set title=?, content=?, modTime=now() where bid=?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getContent());
+			pstmt.setInt(3, board.getBid());
+			
+			pstmt.executeUpdate();
+			pstmt.close(); conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void deleteBoard(int bid) {
