@@ -78,6 +78,7 @@ public class BoardController extends HttpServlet {
 				response.sendRedirect("/jw/bbs/board/list?p=1");
 			}
 			break;
+			// sdfasdf
 		
 		case "detail":
 			bid = Integer.parseInt(request.getParameter("bid"));
