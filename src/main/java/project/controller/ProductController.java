@@ -18,13 +18,13 @@ import java.io.OutputStream;
 import java.net.URLEncoder;
 import java.time.LocalDateTime;
 
-@WebServlet({"/bbs/product/insert", "/bbs/product/view"})
+@WebServlet({"/bbs/product/insert", "/bbs/product/squareInsert", "/bbs/product/view"})
 @MultipartConfig(
 		fileSizeThreshold = 1 * 1024 * 1024,			// 1 MB
 		maxFileSize = 10 * 1024 * 1024,					// 10 MB
 		maxRequestSize = 10 * 1024 * 1024
 )
-public class ProdcutController extends HttpServlet {
+public class ProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final String UPLOAD_PATH = "c:/Temp/upload/bbs";
        
@@ -54,6 +54,32 @@ public class ProdcutController extends HttpServlet {
 				String fname = category + System.currentTimeMillis() + "." + extension;
 				String path = UPLOAD_PATH + "/" + fname;
 				filePart.write(path);
+				
+				Product product = new Product(category, pname, price, description, fname);
+				rd = request.getRequestDispatcher("/WEB-INF/view/product/detail.jsp");
+				request.setAttribute("product", product);
+				rd.forward(request, response);
+			}
+			break;
+		
+		case "squareInsert":
+			if (method.equals("GET")) {
+				rd = request.getRequestDispatcher("/WEB-INF/view/product/squareInsert.jsp");
+				rd.forward(request, response);
+			} else {
+				String category = request.getParameter("category");
+				String pname = request.getParameter("pname");
+				String price_ = request.getParameter("price");
+				int price = Integer.parseInt(price_);
+				String description = request.getParameter("description");
+				
+				Part filePart = request.getPart("imgFile");
+				String filename = filePart.getSubmittedFileName();
+				String path = UPLOAD_PATH + "/" + filename;
+				filePart.write(path);
+				
+				ImageUtil imageUtil = new ImageUtil();
+				String fname = imageUtil.squareImage(category, filename);
 				
 				Product product = new Product(category, pname, price, description, fname);
 				rd = request.getRequestDispatcher("/WEB-INF/view/product/detail.jsp");
