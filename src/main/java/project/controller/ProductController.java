@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.Part;
 import project.entity.Product;
+import project.service.ImageUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,7 +27,7 @@ import java.time.LocalDateTime;
 )
 public class ProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final String UPLOAD_PATH = "c:/Temp/upload/bbs";
+	public static final String UPLOAD_PATH = "c:/Temp/upload/bbs" ;
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String[] uri = request.getRequestURI().split("/");
